@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:dbTest
+    driverClassName: org.h2.Driver
+    username: username
+    password: password
+    jpa:
+      database-platoform: org.hibernate.dialect.H2Dialect
+      open-in-view: true
+server:
+  conextPath: /api/v1
