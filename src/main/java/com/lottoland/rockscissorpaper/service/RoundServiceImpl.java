@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
-@Service("RoundService")
+@Service()
 @AllArgsConstructor
 public class RoundServiceImpl implements RoundService {
 
@@ -52,7 +52,8 @@ public class RoundServiceImpl implements RoundService {
     return Choice.values()[(int)( Math.random() * (maxRandom + 1)) ];
   }
 
-  private Result getPlayerResult(Choice choice1, Choice choice2) {
+  @Override
+  public Result getPlayerResult(Choice choice1, Choice choice2) {
     int[][] resultsMatrix = {
       {1, 0, 2},
       {2, 1, 0},

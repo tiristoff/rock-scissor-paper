@@ -24,19 +24,17 @@ public class GameServiceImpl implements GameService {
   private BoardConverter boardConverter;
 
   @Override
-  public com.lottoland.rockscissorpaper.domain.Board playGame(
-      com.lottoland.rockscissorpaper.domain.Board board) {
+  public com.lottoland.rockscissorpaper.domain.Board playGame(String boardId) {
 
     Board entityBoard;
     try {
-      entityBoard = boardService.findOne(board.getId());
+      entityBoard = boardService.findOne(boardId);
     } catch (InvalidConditionsException e) {
       entityBoard = boardService.intNewBoard();
     }
 
     entityBoard.getRounds().add(roundService.generateNewRound());
-    boardService.save(entityBoard);
-    return boardConverter.convertBoard(entityBoard);
+    return boardConverter.convertBoard(boardService.save(entityBoard));
   }
 
   @Override

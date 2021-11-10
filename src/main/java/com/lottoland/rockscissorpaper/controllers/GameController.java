@@ -5,7 +5,6 @@ import com.lottoland.rockscissorpaper.domain.Round;
 import com.lottoland.rockscissorpaper.service.GameService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +21,8 @@ public class GameController {
   @ApiOperation(value = "play the rock-scissor-rock")
   @PutMapping("/play")
   public ResponseEntity<Board> play(
-      @RequestBody Board currentBoard, @RequestHeader HttpHeaders headers) {
-    return new ResponseEntity<>(gameService.playGame(currentBoard),HttpStatus.OK);
+      @RequestBody String currentBoardId, @RequestHeader HttpHeaders headers) {
+    return new ResponseEntity<>(gameService.playGame(currentBoardId),HttpStatus.OK);
   }
   @ApiOperation(value = "Obtain standings")
   @GetMapping("/standings")

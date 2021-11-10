@@ -14,7 +14,7 @@ public interface GameService {
      * @param board
      * @return
      */
-    Board playGame(Board board);
+    Board playGame(String boardId);
 
 
     /** @return */
