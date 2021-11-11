@@ -1,6 +1,7 @@
 package com.lottoland.rockscissorpaper.service;
 
 import com.lottoland.rockscissorpaper.domain.Round;
+import com.lottoland.rockscissorpaper.domain.Standings;
 import com.lottoland.rockscissorpaper.domain.exception.InvalidConditionsException;
 import com.lottoland.rockscissorpaper.mapper.BoardConverter;
 import com.lottoland.rockscissorpaper.mapper.BoardMapper;
@@ -38,9 +39,24 @@ public class GameServiceImpl implements GameService {
   }
 
   @Override
-  public List<Round> getAllRounds() {
-    return roundService.getAllRoundsPlayed().stream()
-        .map(r -> RoundMapper.INSTANCE.modelToDto(r))
-        .collect(Collectors.toList());
+  public Standings getAllRounds() {
+
+    return Standings.builder()
+        .roundsPlayed(
+            roundService.getAllRoundsPlayed().stream()
+                .map(r -> RoundMapper.INSTANCE.modelToDto(r))
+                .collect(Collectors.toList()))
+        .build();
+  }
+
+  @Override
+  public com.lottoland.rockscissorpaper.domain.Board cleanBoard(final String id) {
+    Board board = boardService.findOne(id);
+    return BoardMapper.INSTANCE.modelToDto(boardService.clearBoard(board));
+  }
+
+  @Override
+  public com.lottoland.rockscissorpaper.domain.Board getBoard(String id) {
+    return BoardMapper.INSTANCE.modelToDto(boardService.findOne(id));
   }
 }

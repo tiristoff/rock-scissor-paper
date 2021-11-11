@@ -22,5 +22,12 @@ public interface BoardService {
    */
   Board findOne(String id);
 
+  /**
+   *
+   * @param board
+   * @return
+   */
+  Board clearBoard(Board board);
+
 
 }

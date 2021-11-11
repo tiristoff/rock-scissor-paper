@@ -36,5 +36,11 @@ public class BoardServiceImpl implements BoardService {
             () -> new InvalidConditionsException("Board don´t exists, new game will be created"));
   }
 
+  @Override
+  public Board clearBoard(Board board) {
+    board.setRounds(new ArrayList<>());
+    return boardRepository.save(board);
+  }
+
 
 }

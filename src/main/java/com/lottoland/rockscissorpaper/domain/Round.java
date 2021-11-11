@@ -18,4 +18,5 @@ public class Round implements Serializable {
     private Result player1Result;
 
     private Result player2Result;
+
 }
