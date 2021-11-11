@@ -22,7 +22,7 @@ export default function RoundTable(prop) {
 
       <style jsx>{`
        table{
-        
+        padding:10px;
         border-collapse: collapse;
         font-size: 0.9em;
         font-family: sans-serif;
