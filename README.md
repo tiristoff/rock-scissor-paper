@@ -17,7 +17,7 @@ H2
 React 
 Next.JS
 
-#How to run the project
+## How to run the project
 
 mvn clean install spring-boot:run 
 
