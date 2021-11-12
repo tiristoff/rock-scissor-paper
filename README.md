@@ -2,13 +2,13 @@
 
 The back is based on Spring boot and front end on React builded with Next.js framework
 
-#Required Software
+## Required Software
 
 Java 11
 Maven
 Npm
 
-#Software:
+## Software:
 
 Java 11
 Spring boot
@@ -25,6 +25,6 @@ cd front
 
 npm run dev
 
-#Api documentation
+## Api documentation
 
 http://localhost:8080/swagger-ui
