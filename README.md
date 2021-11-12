@@ -4,18 +4,25 @@ The back is based on Spring boot and front end on React builded with Next.js fra
 
 ## Required Software
 
-Java 11
-Maven
-Npm
+- Java 11
+
+- Maven
+
+- Npm
 
 ## Software:
 
-Java 11
-Spring boot
-Maven
-H2
-React 
-Next.JS
+- Java 11
+
+- Spring boot
+
+- Maven
+
+- H2
+
+- React 
+
+- Next.JS
 
 ## How to run the project
 
